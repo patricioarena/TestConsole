@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Test.Services;
 
 namespace Test
@@ -21,8 +22,12 @@ namespace Test
 
         public IServiceCollection ConfigureServices()
         {
-            return new ServiceCollection()
-                .AddLogging()
+              return new ServiceCollection()
+                .AddLogging(logging =>
+                {
+                    logging.AddConfiguration(Configuration.GetSection("Logging"));
+                    logging.AddConsole();
+                }).Configure<LoggerFilterOptions>(options => options.MinLevel = LogLevel.Information)
                 .AddMemoryCache()
                 .AddSingleton<IConfigurationRoot>(Configuration)
                 //.AddSingleton<IRolesServices, RolesServices>()

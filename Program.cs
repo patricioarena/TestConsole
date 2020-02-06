@@ -16,6 +16,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.DataProtection;
 using Newtonsoft.Json.Linq;
 using System.Xml;
+using Microsoft.Extensions.Logging;
 
 namespace Test
 {
@@ -35,6 +36,9 @@ namespace Test
 
             //var encryptServices = serviceProvider.GetService<IEncryptService>();
             var tokenServices = serviceProvider.GetService<ITokenService>();
+
+            var logger = serviceProvider.GetService<ILogger<Startup>>();
+            logger.LogInformation("hello world");
 
             //var people = serviceProvider.GetService<IPeople>();
             //var aPersonA = people.GetPersonByKey(105);
