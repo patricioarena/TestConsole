@@ -30,8 +30,8 @@ namespace Test
                 }).Configure<LoggerFilterOptions>(options => options.MinLevel = LogLevel.Information)
                 .AddMemoryCache()
                 .AddSingleton<IConfigurationRoot>(Configuration)
-                //.AddSingleton<IRolesServices, RolesServices>()
-                //.AddSingleton<IPeople, People>()
+                .AddSingleton<IRolesServices, RolesServices>()
+                .AddSingleton<IPeople, People>()
                 .AddSingleton<IEncryptService, EncryptService>()
                 .AddSingleton<ITokenService, TokenService>()
                 ;

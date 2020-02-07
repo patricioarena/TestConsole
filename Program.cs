@@ -28,19 +28,20 @@ namespace Test
             IServiceProvider serviceProvider = startup.ConfigureServices()
                 .BuildServiceProvider();
 
-            // Set Services
-
+            #region Set Services
             //var rolesServices = serviceProvider.GetService<IRolesServices>();
-            //var rolesInJson = rolesServices.readJson();
-            //rolesServices.printRoles(rolesServices.ConfigToQueue2(rolesInJson));
-
+            //var people = serviceProvider.GetService<IPeople>();
             //var encryptServices = serviceProvider.GetService<IEncryptService>();
             var tokenServices = serviceProvider.GetService<ITokenService>();
+            var loggerServices = serviceProvider.GetService<ILogger<Startup>>();
 
-            var logger = serviceProvider.GetService<ILogger<Startup>>();
-            logger.LogInformation("hello world");
+            #endregion Set Services
 
-            //var people = serviceProvider.GetService<IPeople>();
+            loggerServices.LogInformation("hello world");
+            
+            //var rolesInJson = rolesServices.readJson();
+            //rolesServices.printRoles(rolesServices.ConfigToQueue2(rolesInJson));
+            
             //var aPersonA = people.GetPersonByKey(105);
             //var aPersonB = people.GetPersonByLegajo(105);
             //var Dictionary = people.Dictionary();
