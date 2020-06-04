@@ -1,22 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Test.Services;
-using System.Security.Cryptography;
-using System.Text.RegularExpressions;
-using System.Net;
-using System.Security.Claims;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.DataProtection;
-using Newtonsoft.Json.Linq;
-using System.Xml;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using Test.Services;
 
 namespace Test
 {
@@ -37,8 +25,8 @@ namespace Test
             //var encryptServices = serviceProvider.GetService<IEncryptService>();
             var tokenServices = serviceProvider.GetService<ITokenService>();
 
-            var logger = serviceProvider.GetService<ILogger<Startup>>();
-            logger.LogInformation("hello world");
+            //var logger = serviceProvider.GetService<ILogger<Startup>>();
+            //logger.LogInformation("hello world");
 
             //var people = serviceProvider.GetService<IPeople>();
             //var aPersonA = people.GetPersonByKey(105);

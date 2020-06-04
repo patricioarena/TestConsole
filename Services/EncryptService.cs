@@ -12,8 +12,6 @@ namespace Test.Services
 {
     public interface IEncryptService
     {
-        //string DecryptString(string cipherText, string passPhrase);
-        //string EncryptString(string plainText, string passPhrase);
         string DecryptString(string cipherText);
         string EncryptString(string plainText);
     }
@@ -26,7 +24,6 @@ namespace Test.Services
 
         public EncryptService(){ }
 
-        //public string EncryptString(string plainText, string passPhrase)
         public string EncryptString(string plainText)
         {
             byte[] initVectorBytes = Encoding.UTF8.GetBytes(initVector);
@@ -46,7 +43,6 @@ namespace Test.Services
             return Convert.ToBase64String(cipherTextBytes);
         }
 
-        //public string DecryptString(string cipherText, string passPhrase)
         public string DecryptString(string cipherText)
         {
             byte[] initVectorBytes = Encoding.UTF8.GetBytes(initVector);
