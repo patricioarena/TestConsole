@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Test.Services;
+using TestConsole.Services;
 
 namespace Test
 {
@@ -34,6 +35,7 @@ namespace Test
                 .AddSingleton<IPeople, People>()
                 .AddSingleton<IEncryptService, EncryptService>()
                 .AddSingleton<ITokenService, TokenService>()
+                .AddSingleton<IDocumentoService, DocumentoService>()
                 ;
         }
 
