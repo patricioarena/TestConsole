@@ -1,10 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using Test.Services;
+using TestConsole.Services;
 
 namespace Test
 {
@@ -16,19 +12,21 @@ namespace Test
             IServiceProvider serviceProvider = startup.ConfigureServices()
                 .BuildServiceProvider();
 
-            // Set Services
-
+            #region Set Services
             //var rolesServices = serviceProvider.GetService<IRolesServices>();
+            //var people = serviceProvider.GetService<IPeople>();
+            //var encryptServices = serviceProvider.GetService<IEncryptService>();
+            //var tokenServices = serviceProvider.GetService<ITokenService>();
+            //var loggerServices = serviceProvider.GetService<ILogger<Startup>>();
+            var documentServices = serviceProvider.GetService<IDocumentoService>();
+
+            #endregion Set Services
+
+            //loggerServices.LogInformation("hello world");
+
             //var rolesInJson = rolesServices.readJson();
             //rolesServices.printRoles(rolesServices.ConfigToQueue2(rolesInJson));
 
-            //var encryptServices = serviceProvider.GetService<IEncryptService>();
-            var tokenServices = serviceProvider.GetService<ITokenService>();
-
-            var logger = serviceProvider.GetService<ILogger<Startup>>();
-            logger.LogInformation("hello world");
-
-            //var people = serviceProvider.GetService<IPeople>();
             //var aPersonA = people.GetPersonByKey(105);
             //var aPersonB = people.GetPersonByLegajo(105);
             //var Dictionary = people.Dictionary();
