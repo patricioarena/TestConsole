@@ -1,21 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Test.Services;
-using System.Security.Cryptography;
-using System.Text.RegularExpressions;
-using System.Net;
-using System.Security.Claims;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.DataProtection;
-using Newtonsoft.Json.Linq;
-using System.Xml;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using TestConsole.Services;
 
@@ -95,55 +78,13 @@ namespace Test
 
             //List<Claim> listClaims2 = tokenServices.JWTDecoder(identityserver4_Access_Token);
             //Console.WriteLine($"ListClaims2:  { listClaims2 }");
-
+            
             //Console.WriteLine("==========================================================");
             //for (int i = 0; i < (listClaims2.Count()); i++)
             //{
             //    Console.WriteLine(listClaims2.ElementAt(i));
             //}
             //Console.WriteLine("==========================================================");
-
-
-
-
-
-
-
-
-
-
-            Documento1 first1 = new Documento1(0, 1, new Guid("4DD68DEE-A968-4B1D-B33E-FB44CF037925"));
-            Documento1 second1 = new Documento1(0, 1, new Guid("BAC7D399-AC63-44B6-8735-F82FA1821BA1"));
-            Documento1 third1 = new Documento1(0, 1, new Guid("AD5FD857-9D3B-44DE-9890-4A56C6508A98"));
-
-            Documento2 first2 = new Documento2(0, 1, new Guid("4DD68DEE-A968-4B1D-B33E-FB44CF037925"), true);
-            Documento2 second2 = new Documento2(0, 1, new Guid("BAC7D399-AC63-44B6-8735-F82FA1821BA1"), true);
-            Documento2 third2 = new Documento2(0, 1, new Guid("AD5FD857-9D3B-44DE-9890-4A56C6508A98"), true);
-            Documento2 four2 = new Documento2(0, 1, new Guid("AFFFFFFF-9D3B-44DE-9890-4A56C6508A99"), false);
-            Documento2 five2 = new Documento2(0, 1, new Guid("DEEEEEEE-9D3B-44DE-9890-4A56C6508A90"), false);
-
-            List<Documento1> documento1s = new List<Documento1>();
-            List<Documento2> documento2s = new List<Documento2>();
-
-            documento1s.Add(first1);
-            documento1s.Add(second1);
-            documento1s.Add(third1);
-
-            documento2s.Add(first2);
-            documento2s.Add(second2);
-            documento2s.Add(third2);
-            documento2s.Add(four2);
-            documento2s.Add(five2);
-
-            var doc = documentServices.CompararListas(documento1s, documento2s);
-
-            Console.WriteLine("==========================================================");
-            foreach (Documento2 documento2 in doc)
-            {
-                Console.WriteLine(documento2.idPresentacion.ToString());
-                Console.WriteLine(documento2.unicIdDocumento.ToString());
-            }
-            Console.WriteLine("==========================================================");
 
         }
     }
