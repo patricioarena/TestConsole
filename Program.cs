@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using TestConsole.Services;
 
@@ -78,7 +79,7 @@ namespace Test
 
             //List<Claim> listClaims2 = tokenServices.JWTDecoder(identityserver4_Access_Token);
             //Console.WriteLine($"ListClaims2:  { listClaims2 }");
-            
+
             //Console.WriteLine("==========================================================");
             //for (int i = 0; i < (listClaims2.Count()); i++)
             //{
@@ -91,4 +92,3 @@ namespace Test
 
 }
 
- 
