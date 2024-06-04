@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System.IO;
 using System.Reflection;
 using Test.Services;
+using TestConsole.Services;
 
 namespace Test
 {
@@ -31,6 +32,7 @@ namespace Test
                 .AddSingleton<IPeople, People>()
                 .AddSingleton<IEncryptService, EncryptService>()
                 .AddSingleton<ITokenService, TokenService>()
+                .AddSingleton<IDocumentoService, DocumentoService>()
                 ;
         }
 

@@ -21,7 +21,6 @@ namespace Test.Services
         public List<Claim> JWTDecoder(string stringToken)
         {
             var jwtHandler = new JwtSecurityTokenHandler();
-            //var jwtInput = SecurityToken.ToString();
             List<Claim> claims = new List<Claim>();
 
             var readableToken = jwtHandler.CanReadToken(stringToken);
